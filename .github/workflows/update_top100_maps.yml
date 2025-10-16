@@ -39,11 +39,3 @@ jobs:
           else
             echo "No changes to commit."
           fi
-
-        - name: Install dependencies
-  run: |
-    python -m pip install --upgrade pip
-    pip install -r requirements.txt
-
-- name: Generate/normalize maps
-  run: python scripts/update_top100_maps.py
