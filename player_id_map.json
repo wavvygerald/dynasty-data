@@ -1,0 +1,7 @@
+{
+  "note": "Only map players on Dr Sweetleaf. Add/update as needed.",
+  "players": [
+    { "sleeper_id": "1234", "name": "Bijan Robinson", "pos": "RB", "team": "ATL", "number": 7 },
+    { "sleeper_id": "5678", "name": "Puka Nacua", "pos": "WR", "team": "LAR", "number": 17 }
+  ]
+}
