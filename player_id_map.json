@@ -1,0 +1,8 @@
+{
+  "players": [
+    { "sleeper_id": "4892", "name": "Jalen Hurts", "pos": "QB", "team": "PHI", "number": 1 },
+    { "sleeper_id": "8150", "name": "Bijan Robinson", "pos": "RB", "team": "ATL", "number": 7 },
+    { "sleeper_id": "12481", "name": "Kyren Williams", "pos": "RB", "team": "LAR", "number": 23 },
+    { "sleeper_id": "7569", "name": "Amon-Ra St. Brown", "pos": "WR", "team": "DET", "number": 14 }
+  ]
+}
