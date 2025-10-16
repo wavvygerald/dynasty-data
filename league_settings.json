@@ -2,8 +2,22 @@
   "format": "Dynasty",
   "scoring": "Full PPR",
   "te_premium": false,
-  "starters": { "QB": 1, "RB": 2, "WR": 2, "TE": 1, "FLEX": 2, "SF": 1 },
-  "bench": 20,
+
+  "starters": {
+    "QB": 1,
+    "RB": 2,
+    "WR": 2,
+    "TE": 1,
+    "FLEX": 3,
+    "K": 1,
+    "DST": 1
+  },
+
+  "superflex": false,
+  "bench": 9,
   "ir": 3,
-  "notes": "Edit any of these and the GPT will summarize them."
+  "taxi": 3,
+  "roster_max": 26,
+
+  "notes": "11 weekly starters: 1 QB, 2 RB, 2 WR, 1 TE, 3 FLEX (RB/WR/TE), 1 K, 1 DST. No Superflex. 26 players max achievable with 3 IR + 3 Taxi filled."
 }
