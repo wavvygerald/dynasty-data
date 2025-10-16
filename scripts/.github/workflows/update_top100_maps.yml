@@ -1,0 +1,32 @@
+name: Update Top 100 Player Maps
+
+on:
+  workflow_dispatch: {}
+  schedule:
+    - cron: "0 9 * * *"   # daily 09:00 UTC; adjust as you like
+
+jobs:
+  build-maps:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write   # allow pushing changes
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install deps
+        run: pip install -r requirements.txt
+
+      - name: Run generator
+        run: python scripts/update_top100_maps.py
+
+      - name: Commit changes (if any)
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore: refresh top100 player maps"
+          file_pattern: data/player_maps/*.json
