@@ -1,0 +1,32 @@
+{
+  "meta": { "pos": "QB", "version": "v1", "source": "Sleeper / CJ values" },
+  "players": [
+    { "sleeper_id": "QB_ID_1", "name": "Patrick Mahomes", "pos": "QB", "team": "KC", "number": 15 },
+    { "sleeper_id": "QB_ID_2", "name": "Josh Allen", "pos": "QB", "team": "BUF", "number": 17 }
+  ]
+}
+
+{
+  "meta": { "pos": "RB", "version": "v1", "source": "Sleeper / CJ values" },
+  "players": [
+    { "sleeper_id": "RB_ID_1", "name": "Bijan Robinson", "pos": "RB", "team": "ATL", "number": 7 },
+    { "sleeper_id": "RB_ID_2", "name": "Jahmyr Gibbs", "pos": "RB", "team": "DET", "number": 26 }
+  ]
+}
+
+{
+  "meta": { "pos": "WR", "version": "v1", "source": "Sleeper / CJ values" },
+  "players": [
+    { "sleeper_id": "WR_ID_1", "name": "Ja'Marr Chase", "pos": "WR", "team": "CIN", "number": 1 },
+    { "sleeper_id": "WR_ID_2", "name": "Puka Nacua", "pos": "WR", "team": "LAR", "number": 17 }
+  ]
+}
+
+{
+  "meta": { "pos": "TE", "version": "v1", "source": "Sleeper / CJ values" },
+  "players": [
+    { "sleeper_id": "TE_ID_1", "name": "Sam LaPorta", "pos": "TE", "team": "DET", "number": 87 },
+    { "sleeper_id": "TE_ID_2", "name": "Mark Andrews", "pos": "TE", "team": "BAL", "number": 89 }
+  ]
+}
+
