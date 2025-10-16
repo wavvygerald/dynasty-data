@@ -1,133 +1,41 @@
-#!/usr/bin/env python3
-"""
-Auto-refresh Top-100 positional maps (QB/RB/WR/TE) from KeepTradeCut Dynasty PPR.
-Outputs to: player_maps/top100_{pos}.json with fields:
-- meta: {pos, version, source, updated}
-- players: [{rank, name, team, tier, dynasty_value, pos}]
+name: Update Top 100 Player Maps
 
-Notes:
-- KTC page params: format=1 (1QB) or 0 (SF). We use 1QB per your league.
-- We parse 'onePlayer' cards; class names are stable historically but can change.
-- Safe fallbacks if value/tier/team are missing.
-"""
+on:
+  workflow_dispatch: {}
+  schedule:
+    - cron: "15 9 * * *"   # daily 09:15 UTC
 
-import json, time, datetime, pathlib, re
-import requests
-from bs4 import BeautifulSoup
+permissions:
+  contents: write
 
-ROOT = pathlib.Path(__file__).resolve().parents[1]
-OUT_DIR = ROOT / "player_maps"
-OUT_DIR.mkdir(parents=True, exist_ok=True)
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
 
-HEADERS = {
-    "User-Agent": "Mozilla/5.0 (Dynasty-Data-Updater; +https://github.com/wavvygerald/dynasty-data)"
-}
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
 
-# Position codes in KTC filter bar use: QB|RB|WR|TE
-POSITIONS = ["QB", "RB", "WR", "TE"]
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
 
-# 1QB (format=1). If you ever want SF, set FORMAT=0.
-FORMAT = 1
+      - name: Generate/normalize maps
+        run: python scripts/update_top100_maps.py
 
-KTC_URL = "https://keeptradecut.com/dynasty-rankings?page={page}&filters={filters}&format={fmt}"
-
-def fetch_page(pos: str, page: int) -> str:
-    url = KTC_URL.format(page=page, filters=pos, fmt=FORMAT)
-    r = requests.get(url, headers=HEADERS, timeout=20)
-    r.raise_for_status()
-    return r.text
-
-def parse_players_from_html(html: str, pos: str):
-    soup = BeautifulSoup(html, "html.parser")
-    cards = soup.select(".onePlayer")
-    players = []
-    for c in cards:
-        name_el = c.select_one(".player-name")
-        pos_el = c.select_one(".position")
-        val_el = c.select_one(".value")
-        tier_el = c.select_one(".tier")
-
-        # Extracts like "WR3", "RB1" => team suffix appears in the name text
-        name = (name_el.get_text(strip=True) if name_el else "").strip()
-        # Drop trailing team code suffix (ATL, RFA, FA, etc.)
-        team_suffix = ""
-        if len(name) >= 2 and name[-2:].isupper() and name[-2:] != "JR" and ' ' not in name[-2:]:
-            team_suffix = name[-2:]
-        if len(name) >= 3 and name[-3:].isupper() and ' ' not in name[-3:]:
-            team_suffix = name[-3:]
-        clean_name = name.replace(team_suffix, "").strip()
-
-        # Pos/rank like "WR3", "RB12"
-        pos_rank = pos_el.get_text(strip=True) if pos_el else ""
-        team = team_suffix if team_suffix and team_suffix not in {"FA","RFA"} else ""
-        # KTC value is an integer string
-        try:
-            value = int((val_el.get_text(strip=True) if val_el else "0").replace(",", ""))
-        except:
-            value = 0
-
-        # Tier text may be like "Tier 1"
-        tier_text = tier_el.get_text(strip=True) if tier_el else ""
-        m = re.search(r"(\d+)", tier_text)
-        tier = int(m.group(1)) if m else 0
-
-        if clean_name:
-            players.append({
-                "name": clean_name,
-                "team": team,
-                "dynasty_value": value,
-                "tier": tier,
-                "pos": pos
-            })
-    return players
-
-def pull_top_100(pos: str):
-    # KTC shows ~50 per page; grab first 3 pages to be safe
-    all_players = []
-    for page in range(1, 4):
-        html = fetch_page(pos, page)
-        page_players = parse_players_from_html(html, pos)
-        if not page_players:
-            break
-        all_players.extend(page_players)
-        # brief politeness pause
-        time.sleep(0.8)
-    # de-dupe by name, keep max value
-    seen = {}
-    for p in all_players:
-        key = (p["name"], p.get("team",""))
-        if key not in seen or p["dynasty_value"] > seen[key]["dynasty_value"]:
-            seen[key] = p
-    players = list(seen.values())
-    # sort by value desc, then name
-    players.sort(key=lambda x: (-x["dynasty_value"], x["name"]))
-    players = players[:100]
-    for i, p in enumerate(players, 1):
-        p["rank"] = i
-    return players
-
-def write_json(pos: str, players):
-    meta = {
-        "pos": pos,
-        "version": "ktc-auto",
-        "source": "KeepTradeCut (scraped dynasty PPR)",
-        "updated": datetime.date.today().isoformat()
-    }
-    out = {"meta": meta, "players": players}
-    path = OUT_DIR / f"top100_{pos.lower()}.json"
-    with open(path, "w", encoding="utf-8") as f:
-        json.dump(out, f, ensure_ascii=False, indent=2)
-        f.write("\n")
-    print(f"✓ {path} ({len(players)} players)")
-
-def main():
-    for pos in POSITIONS:
-        try:
-            players = pull_top_100(pos)
-            write_json(pos, players)
-        except Exception as e:
-            # Fail soft: write nothing rather than breaking the job
-            print(f"!! failed {pos}: {e}")
-
-if __name__ == "__main__":
-    main()
+      - name: Commit changes
+        run: |
+          if [[ -n "$(git status --porcelain)" ]]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add player_maps/*.json
+            git commit -m "chore: refresh top100 maps [skip ci]"
+            git push
+          else
+            echo "No changes to commit."
+          fi
