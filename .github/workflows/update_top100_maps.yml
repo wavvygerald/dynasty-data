@@ -1,0 +1,40 @@
+name: Update Top 100 Player Maps
+
+on:
+  workflow_dispatch: {}
+  schedule:
+    - cron: "15 9 * * *"   # daily 09:15 UTC
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install deps
+        run: |
+          if [ -s requirements.txt ]; then pip install -r requirements.txt; fi
+
+      - name: Generate/normalize maps
+        run: python scripts/update_top100_maps.py
+
+      - name: Commit changes
+        run: |
+          if [[ -n "$(git status --porcelain)" ]]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add player_maps/*.json
+            git commit -m "chore: refresh top100 maps [skip ci]"
+            git push
+          else
+            echo "No changes to commit."
+          fi
