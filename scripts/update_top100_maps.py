@@ -1,67 +1,127 @@
 #!/usr/bin/env python3
-import json, pathlib, datetime, sys
+import json, time, datetime, pathlib, re, sys, random
+import requests
+from bs4 import BeautifulSoup
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
-PMAP_DIR = ROOT / "player_maps"
+OUT_DIR = ROOT / "player_maps"
+OUT_DIR.mkdir(parents=True, exist_ok=True)
 
-FILES = {
-    "WR": PMAP_DIR / "top100_wr.json",
-    "RB": PMAP_DIR / "top100_rb.json",
-    "QB": PMAP_DIR / "top100_qb.json",
-    "TE": PMAP_DIR / "top100_te.json",
+HEADERS = {
+    "User-Agent": "DynastyDataBot/1.0 (+https://github.com/wavvygerald/dynasty-data)",
+    "Accept": "text/html,application/xhtml+xml",
+    "Accept-Language": "en-US,en;q=0.9",
+    "Connection": "keep-alive",
 }
 
-def load_json(p):
-    with open(p, "r", encoding="utf-8") as f:
-        return json.load(f)
+POSITIONS = ["QB", "RB", "WR", "TE"]
+FORMAT = 1  # 1QB (change to 0 for SF if you ever want)
+BASE = "https://keeptradecut.com/dynasty-rankings?page={page}&filters={pos}&format={fmt}"
 
-def save_json(p, obj):
-    p.parent.mkdir(parents=True, exist_ok=True)
-    with open(p, "w", encoding="utf-8") as f:
-        json.dump(obj, f, ensure_ascii=False, indent=2)
-        f.write("\n")
+def fetch(page: int, pos: str) -> str:
+    url = BASE.format(page=page, pos=pos, fmt=FORMAT)
+    r = requests.get(url, headers=HEADERS, timeout=25)
+    # Surface rate-limit or blocking clearly
+    if r.status_code in (403, 429):
+        raise RuntimeError(f"KTC blocked/ratelimited (HTTP {r.status_code}) for {pos} p{page}")
+    r.raise_for_status()
+    return r.text
 
-def normalize_entry(e):
-    # enforce keys + types; allow seed files with partial fields
-    return {
-        "rank": int(e.get("rank") or 9999),
-        "name": str(e.get("name") or "").strip(),
-        "team": (e.get("team") or "").upper(),
-        "tier": int(e.get("tier") or 9),
-        "dynasty_value": int(e.get("dynasty_value") or 0),
-        # carry through optional id/pos if present
-        **({k: e[k] for k in ("sleeper_id","pos","number") if k in e})
-    }
+def parse_players(html: str, pos: str):
+    soup = BeautifulSoup(html, "html.parser")
+    cards = soup.select(".onePlayer")
+    out = []
+    for card in cards:
+        name_el = card.select_one(".player-name")
+        pos_el  = card.select_one(".position")
+        val_el  = card.select_one(".value")
+        tier_el = card.select_one(".tier")
 
-def process_file(pos, path):
-    data = load_json(path)
-    players = [normalize_entry(x) for x in data.get("players", []) if x.get("name")]
-    # prefer sorting by dynasty_value desc; fallback to rank asc
-    players.sort(key=lambda x: (-x.get("dynasty_value", 0), x.get("rank", 9999), x["name"]))
-    # clamp to top 100 and re-rank
+        name_txt = (name_el.get_text(strip=True) if name_el else "").strip()
+        if not name_txt:
+            continue
+
+        # strip trailing team suffix like ATL, LAR, FA, RFA
+        team = ""
+        m = re.search(r"\s([A-Z]{2,3})$", name_txt)
+        if m and m.group(1) not in {"FA","RFA"}:
+            team = m.group(1)
+            name_txt = name_txt[:m.start()].strip()
+
+        try:
+            value = int((val_el.get_text(strip=True) if val_el else "0").replace(",", ""))
+        except:
+            value = 0
+
+        tier_text = tier_el.get_text(strip=True) if tier_el else ""
+        tmatch = re.search(r"(\d+)", tier_text)
+        tier = int(tmatch.group(1)) if tmatch else 0
+
+        out.append({
+            "name": name_txt,
+            "team": team,
+            "dynasty_value": value,
+            "tier": tier,
+            "pos": pos
+        })
+    return out
+
+def pull_top100(pos: str):
+    all_rows = []
+    # KTC shows ~50 per page; grab until a page returns 0 (max 10 pages)
+    for page in range(1, 11):
+        html = fetch(page, pos)
+        rows = parse_players(html, pos)
+        if not rows:
+            break
+        all_rows.extend(rows)
+        time.sleep(0.8 + random.random()*0.4)  # polite jitter
+
+    # de-dupe by name+team, keep the highest value
+    merged = {}
+    for p in all_rows:
+        key = (p["name"], p.get("team",""))
+        if key not in merged or p["dynasty_value"] > merged[key]["dynasty_value"]:
+            merged[key] = p
+
+    players = list(merged.values())
+    players.sort(key=lambda x: (-x.get("dynasty_value", 0), x["name"]))
     players = players[:100]
     for i, p in enumerate(players, 1):
         p["rank"] = i
-        p["pos"] = pos
-    # update meta
-    meta = dict(data.get("meta", {}))
-    meta.update({
+    return players
+
+def write_out(pos: str, players):
+    meta = {
         "pos": pos,
-        "version": "auto",
-        "updated": datetime.date.today().isoformat(),
-        "source": meta.get("source", "seed/local")
-    })
+        "version": "ktc-auto",
+        "source": "KeepTradeCut (scraped dynasty PPR)",
+        "updated": datetime.date.today().isoformat()
+    }
     out = {"meta": meta, "players": players}
-    save_json(path, out)
+    path = OUT_DIR / f"top100_{pos.lower()}.json"
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(out, f, ensure_ascii=False, indent=2)
+        f.write("\n")
     print(f"✓ wrote {path.relative_to(ROOT)} ({len(players)} players)")
 
 def main():
-    missing = [p for p in FILES.values() if not p.exists()]
-    if missing:
-        print("Missing files:", ", ".join(str(m) for m in missing), file=sys.stderr)
-        sys.exit(0)  # don’t fail CI; just skip
-    for pos, path in FILES.items():
-        process_file(pos, path)
+    errors = []
+    for pos in POSITIONS:
+        try:
+            players = pull_top100(pos)
+            print(f"{pos}: scraped {len(players)} players")
+            # Fail hard if clearly wrong
+            if len(players) < 50:
+                raise RuntimeError(f"too few players for {pos}: {len(players)}")
+            write_out(pos, players)
+        except Exception as e:
+            print(f"!! {pos} failed: {e}")
+            errors.append((pos, str(e)))
+
+    if errors:
+        print("Errors:", errors)
+        sys.exit(1)  # make the workflow FAIL so we notice it
 
 if __name__ == "__main__":
     main()
