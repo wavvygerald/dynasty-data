@@ -1,0 +1,6 @@
+{
+  "players": [
+    { "sleeper_id": "REPLACE_ME", "name": "Bijan Robinson", "pos": "RB", "team": "ATL", "number": 7 },
+    { "sleeper_id": "REPLACE_ME", "name": "Puka Nacua", "pos": "WR", "team": "LAR", "number": 17 }
+  ]
+}
