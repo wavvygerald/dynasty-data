@@ -1,15 +1,50 @@
 {
   "meta": {
     "pos": "WR",
-    "version": "v1",
+    "version": "auto",
     "source": "Sleeper / Dynasty Process / CJ",
     "updated": "2025-10-16"
   },
   "players": [
-    { "rank": 1, "name": "CeeDee Lamb", "team": "DAL", "tier": 1, "dynasty_value": 9995 },
-    { "rank": 2, "name": "Ja'Marr Chase", "team": "CIN", "tier": 1, "dynasty_value": 9940 },
-    { "rank": 3, "name": "Justin Jefferson", "team": "MIN", "tier": 1, "dynasty_value": 9885 },
-    { "rank": 4, "name": "Amon-Ra St. Brown", "team": "DET", "tier": 1, "dynasty_value": 9750 },
-    { "rank": 5, "name": "Puka Nacua", "team": "LAR", "tier": 1, "dynasty_value": 9600 }
+    {
+      "rank": 1,
+      "name": "CeeDee Lamb",
+      "team": "DAL",
+      "tier": 1,
+      "dynasty_value": 9995,
+      "pos": "WR"
+    },
+    {
+      "rank": 2,
+      "name": "Ja'Marr Chase",
+      "team": "CIN",
+      "tier": 1,
+      "dynasty_value": 9940,
+      "pos": "WR"
+    },
+    {
+      "rank": 3,
+      "name": "Justin Jefferson",
+      "team": "MIN",
+      "tier": 1,
+      "dynasty_value": 9885,
+      "pos": "WR"
+    },
+    {
+      "rank": 4,
+      "name": "Amon-Ra St. Brown",
+      "team": "DET",
+      "tier": 1,
+      "dynasty_value": 9750,
+      "pos": "WR"
+    },
+    {
+      "rank": 5,
+      "name": "Puka Nacua",
+      "team": "LAR",
+      "tier": 1,
+      "dynasty_value": 9600,
+      "pos": "WR"
+    }
   ]
 }

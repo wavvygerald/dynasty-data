@@ -1,10 +1,50 @@
 {
-  "meta": { "pos": "QB", "version": "v1", "source": "seed" },
+  "meta": {
+    "pos": "QB",
+    "version": "auto",
+    "source": "seed",
+    "updated": "2025-10-16"
+  },
   "players": [
-    { "rank": 1, "name": "Patrick Mahomes", "team": "KC",  "tier": 1, "dynasty_value": 9999 },
-    { "rank": 2, "name": "Josh Allen",      "team": "BUF", "tier": 1, "dynasty_value": 9920 },
-    { "rank": 3, "name": "Jalen Hurts",     "team": "PHI", "tier": 1, "dynasty_value": 9850 },
-    { "rank": 4, "name": "C.J. Stroud",     "team": "HOU", "tier": 1, "dynasty_value": 9750 },
-    { "rank": 5, "name": "Joe Burrow",      "team": "CIN", "tier": 1, "dynasty_value": 9600 }
+    {
+      "rank": 1,
+      "name": "Patrick Mahomes",
+      "team": "KC",
+      "tier": 1,
+      "dynasty_value": 9999,
+      "pos": "QB"
+    },
+    {
+      "rank": 2,
+      "name": "Josh Allen",
+      "team": "BUF",
+      "tier": 1,
+      "dynasty_value": 9920,
+      "pos": "QB"
+    },
+    {
+      "rank": 3,
+      "name": "Jalen Hurts",
+      "team": "PHI",
+      "tier": 1,
+      "dynasty_value": 9850,
+      "pos": "QB"
+    },
+    {
+      "rank": 4,
+      "name": "C.J. Stroud",
+      "team": "HOU",
+      "tier": 1,
+      "dynasty_value": 9750,
+      "pos": "QB"
+    },
+    {
+      "rank": 5,
+      "name": "Joe Burrow",
+      "team": "CIN",
+      "tier": 1,
+      "dynasty_value": 9600,
+      "pos": "QB"
+    }
   ]
 }
