@@ -1,0 +1,10 @@
+{
+  "meta": { "pos": "WR", "version": "seed" },
+  "players": [
+    { "sleeper_id": null, "name": "Puka Nacua", "pos": "WR", "team": "LAR", "number": 17 },
+    { "sleeper_id": null, "name": "Ja'Marr Chase", "pos": "WR", "team": "CIN", "number": 1 },
+    { "sleeper_id": null, "name": "Justin Jefferson", "pos": "WR", "team": "MIN", "number": 18 },
+    { "sleeper_id": null, "name": "Amon-Ra St. Brown", "pos": "WR", "team": "DET", "number": 14 },
+    { "sleeper_id": null, "name": "CeeDee Lamb", "pos": "WR", "team": "DAL", "number": 88 }
+  ]
+}
