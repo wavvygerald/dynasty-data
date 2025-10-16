@@ -1,0 +1,10 @@
+{
+  "meta": { "pos": "RB", "version": "v1", "source": "seed" },
+  "players": [
+    { "rank": 1, "name": "Bijan Robinson", "team": "ATL", "tier": 1, "dynasty_value": 9990 },
+    { "rank": 2, "name": "Jahmyr Gibbs",  "team": "DET", "tier": 1, "dynasty_value": 9800 },
+    { "rank": 3, "name": "Breece Hall",    "team": "NYJ", "tier": 1, "dynasty_value": 9720 },
+    { "rank": 4, "name": "De'Von Achane",  "team": "MIA", "tier": 2, "dynasty_value": 9400 },
+    { "rank": 5, "name": "Travis Etienne", "team": "JAX", "tier": 2, "dynasty_value": 9100 }
+  ]
+}
