@@ -1,0 +1,9 @@
+{
+  "format": "Dynasty",
+  "scoring": "Full PPR",
+  "te_premium": false,
+  "starters": { "QB": 1, "RB": 2, "WR": 2, "TE": 1, "FLEX": 2, "SF": 1 },
+  "bench": 20,
+  "ir": 3,
+  "notes": "Edit any of these and the GPT will summarize them."
+}
