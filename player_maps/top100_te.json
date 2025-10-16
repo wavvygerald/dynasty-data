@@ -1,0 +1,10 @@
+{
+  "meta": { "pos": "TE", "version": "v1", "source": "seed" },
+  "players": [
+    { "rank": 1, "name": "Sam LaPorta",  "team": "DET", "tier": 1, "dynasty_value": 9800 },
+    { "rank": 2, "name": "Mark Andrews", "team": "BAL", "tier": 1, "dynasty_value": 9550 },
+    { "rank": 3, "name": "Trey McBride", "team": "ARI", "tier": 1, "dynasty_value": 9400 },
+    { "rank": 4, "name": "Dalton Kincaid","team": "BUF","tier": 2, "dynasty_value": 9100 },
+    { "rank": 5, "name": "Kyle Pitts",   "team": "ATL", "tier": 2, "dynasty_value": 9000 }
+  ]
+}
