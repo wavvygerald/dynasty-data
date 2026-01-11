@@ -3,11 +3,11 @@
     "pos": "RB",
     "version": "ktc-auto",
     "source": "KeepTradeCut (scraped dynasty PPR)",
-    "updated": "2026-01-10"
+    "updated": "2026-01-11"
   },
   "players": [
     {
-      "name": "2028 Early 1stFA",
+      "name": "Tucker KraftGBP",
       "team": "",
       "dynasty_value": 5573,
       "tier": 0,
@@ -15,9 +15,9 @@
       "rank": 1
     },
     {
-      "name": "Tucker KraftGBP",
+      "name": "RJ HarveyRDEN",
       "team": "",
-      "dynasty_value": 5563,
+      "dynasty_value": 5559,
       "tier": 0,
       "pos": "RB",
       "rank": 2
@@ -25,23 +25,23 @@
     {
       "name": "Jalen HurtsPHI",
       "team": "",
-      "dynasty_value": 5546,
+      "dynasty_value": 5555,
       "tier": 0,
       "pos": "RB",
       "rank": 3
     },
     {
-      "name": "Cam SkatteboRNYG",
+      "name": "Luther BurdenRCHI",
       "team": "",
-      "dynasty_value": 5545,
+      "dynasty_value": 5549,
       "tier": 0,
       "pos": "RB",
       "rank": 4
     },
     {
-      "name": "Luther BurdenRCHI",
+      "name": "Cam SkatteboRNYG",
       "team": "",
-      "dynasty_value": 5540,
+      "dynasty_value": 5524,
       "tier": 0,
       "pos": "RB",
       "rank": 5
@@ -49,7 +49,7 @@
     {
       "name": "Jameson WilliamsDET",
       "team": "",
-      "dynasty_value": 5505,
+      "dynasty_value": 5502,
       "tier": 0,
       "pos": "RB",
       "rank": 6
@@ -57,18 +57,10 @@
     {
       "name": "Harold FanninRCLE",
       "team": "",
-      "dynasty_value": 5480,
+      "dynasty_value": 5489,
       "tier": 0,
       "pos": "RB",
       "rank": 7
-    },
-    {
-      "name": "DeVonta SmithPHI",
-      "team": "",
-      "dynasty_value": 5473,
-      "tier": 0,
-      "pos": "RB",
-      "rank": 8
     },
     {
       "name": "A.J. BrownPHI",
@@ -76,20 +68,28 @@
       "dynasty_value": 5471,
       "tier": 0,
       "pos": "RB",
+      "rank": 8
+    },
+    {
+      "name": "DeVonta SmithPHI",
+      "team": "",
+      "dynasty_value": 5455,
+      "tier": 0,
+      "pos": "RB",
       "rank": 9
     },
     {
-      "name": "Jaylen WaddleMIA",
+      "name": "Jaxson DartRNYG",
       "team": "",
-      "dynasty_value": 5402,
+      "dynasty_value": 5403,
       "tier": 0,
       "pos": "RB",
       "rank": 10
     },
     {
-      "name": "Jaxson DartRNYG",
+      "name": "Jaylen WaddleMIA",
       "team": "",
-      "dynasty_value": 5399,
+      "dynasty_value": 5398,
       "tier": 0,
       "pos": "RB",
       "rank": 11
@@ -97,7 +97,7 @@
     {
       "name": "Justin HerbertLAC",
       "team": "",
-      "dynasty_value": 5394,
+      "dynasty_value": 5392,
       "tier": 0,
       "pos": "RB",
       "rank": 12
@@ -105,7 +105,7 @@
     {
       "name": "2027 Late 1stFA",
       "team": "",
-      "dynasty_value": 5388,
+      "dynasty_value": 5382,
       "tier": 0,
       "pos": "RB",
       "rank": 13
@@ -113,7 +113,7 @@
     {
       "name": "Josh JacobsGBP",
       "team": "",
-      "dynasty_value": 5380,
+      "dynasty_value": 5379,
       "tier": 0,
       "pos": "RB",
       "rank": 14
@@ -121,7 +121,7 @@
     {
       "name": "Caleb WilliamsCHI",
       "team": "",
-      "dynasty_value": 5320,
+      "dynasty_value": 5329,
       "tier": 0,
       "pos": "RB",
       "rank": 15
@@ -129,7 +129,7 @@
     {
       "name": "Zay FlowersBAL",
       "team": "",
-      "dynasty_value": 5314,
+      "dynasty_value": 5319,
       "tier": 0,
       "pos": "RB",
       "rank": 16
@@ -137,7 +137,7 @@
     {
       "name": "Travis HunterRJAC",
       "team": "",
-      "dynasty_value": 5293,
+      "dynasty_value": 5296,
       "tier": 0,
       "pos": "RB",
       "rank": 17
@@ -145,7 +145,7 @@
     {
       "name": "Travis EtienneJAC",
       "team": "",
-      "dynasty_value": 5243,
+      "dynasty_value": 5238,
       "tier": 0,
       "pos": "RB",
       "rank": 18
@@ -153,7 +153,7 @@
     {
       "name": "Sam LaPortaDET",
       "team": "",
-      "dynasty_value": 5224,
+      "dynasty_value": 5212,
       "tier": 0,
       "pos": "RB",
       "rank": 19
@@ -185,7 +185,7 @@
     {
       "name": "Javonte WilliamsDAL",
       "team": "",
-      "dynasty_value": 5156,
+      "dynasty_value": 5148,
       "tier": 0,
       "pos": "RB",
       "rank": 23
@@ -193,7 +193,7 @@
     {
       "name": "Jordan AddisonMIN",
       "team": "",
-      "dynasty_value": 5021,
+      "dynasty_value": 5008,
       "tier": 0,
       "pos": "RB",
       "rank": 24
@@ -201,23 +201,23 @@
     {
       "name": "Bo NixDEN",
       "team": "",
-      "dynasty_value": 5001,
+      "dynasty_value": 5005,
       "tier": 0,
       "pos": "RB",
       "rank": 25
     },
     {
-      "name": "2028 Late 1stFA",
+      "name": "Kyle PittsATL",
       "team": "",
-      "dynasty_value": 4844,
+      "dynasty_value": 4848,
       "tier": 0,
       "pos": "RB",
       "rank": 26
     },
     {
-      "name": "Kyle PittsATL",
+      "name": "2028 Late 1stFA",
       "team": "",
-      "dynasty_value": 4832,
+      "dynasty_value": 4845,
       "tier": 0,
       "pos": "RB",
       "rank": 27
@@ -225,7 +225,7 @@
     {
       "name": "Kyle MonangaiRCHI",
       "team": "",
-      "dynasty_value": 4765,
+      "dynasty_value": 4776,
       "tier": 0,
       "pos": "RB",
       "rank": 28
@@ -233,7 +233,7 @@
     {
       "name": "George KittleSFO",
       "team": "",
-      "dynasty_value": 4748,
+      "dynasty_value": 4754,
       "tier": 0,
       "pos": "RB",
       "rank": 29
@@ -241,7 +241,7 @@
     {
       "name": "Oronde GadsdenRLAC",
       "team": "",
-      "dynasty_value": 4748,
+      "dynasty_value": 4739,
       "tier": 0,
       "pos": "RB",
       "rank": 30
@@ -249,7 +249,7 @@
     {
       "name": "Ricky PearsallSFO",
       "team": "",
-      "dynasty_value": 4731,
+      "dynasty_value": 4733,
       "tier": 0,
       "pos": "RB",
       "rank": 31
@@ -257,7 +257,7 @@
     {
       "name": "DK MetcalfPIT",
       "team": "",
-      "dynasty_value": 4709,
+      "dynasty_value": 4703,
       "tier": 0,
       "pos": "RB",
       "rank": 32
@@ -265,7 +265,7 @@
     {
       "name": "Jordan LoveGBP",
       "team": "",
-      "dynasty_value": 4651,
+      "dynasty_value": 4643,
       "tier": 0,
       "pos": "RB",
       "rank": 33
@@ -273,21 +273,21 @@
     {
       "name": "Jayden HigginsRHOU",
       "team": "",
-      "dynasty_value": 4623,
+      "dynasty_value": 4632,
       "tier": 0,
       "pos": "RB",
       "rank": 34
     },
     {
-      "name": "Zach CharbonnetSEA",
+      "name": "Derrick HenryBAL",
       "team": "",
-      "dynasty_value": 4562,
+      "dynasty_value": 4561,
       "tier": 0,
       "pos": "RB",
       "rank": 35
     },
     {
-      "name": "Michael PittmanIND",
+      "name": "Zach CharbonnetSEA",
       "team": "",
       "dynasty_value": 4560,
       "tier": 0,
@@ -295,17 +295,17 @@
       "rank": 36
     },
     {
-      "name": "2026 Early 2ndFA",
+      "name": "Michael PittmanIND",
       "team": "",
-      "dynasty_value": 4558,
+      "dynasty_value": 4556,
       "tier": 0,
       "pos": "RB",
       "rank": 37
     },
     {
-      "name": "Derrick HenryBAL",
+      "name": "2026 Early 2ndFA",
       "team": "",
-      "dynasty_value": 4557,
+      "dynasty_value": 4553,
       "tier": 0,
       "pos": "RB",
       "rank": 38
@@ -313,7 +313,7 @@
     {
       "name": "Baker MayfieldTBB",
       "team": "",
-      "dynasty_value": 4535,
+      "dynasty_value": 4529,
       "tier": 0,
       "pos": "RB",
       "rank": 39
@@ -321,7 +321,7 @@
     {
       "name": "Davante AdamsLAR",
       "team": "",
-      "dynasty_value": 4504,
+      "dynasty_value": 4506,
       "tier": 0,
       "pos": "RB",
       "rank": 40
@@ -329,7 +329,7 @@
     {
       "name": "2027 Early 2ndFA",
       "team": "",
-      "dynasty_value": 4477,
+      "dynasty_value": 4483,
       "tier": 0,
       "pos": "RB",
       "rank": 41
@@ -345,7 +345,7 @@
     {
       "name": "Xavier WorthyKCC",
       "team": "",
-      "dynasty_value": 4460,
+      "dynasty_value": 4459,
       "tier": 0,
       "pos": "RB",
       "rank": 43
@@ -353,18 +353,10 @@
     {
       "name": "Woody MarksRHOU",
       "team": "",
-      "dynasty_value": 4418,
+      "dynasty_value": 4420,
       "tier": 0,
       "pos": "RB",
       "rank": 44
-    },
-    {
-      "name": "D'Andre SwiftCHI",
-      "team": "",
-      "dynasty_value": 4406,
-      "tier": 0,
-      "pos": "RB",
-      "rank": 45
     },
     {
       "name": "Wan'Dale RobinsonNYG",
@@ -372,12 +364,20 @@
       "dynasty_value": 4405,
       "tier": 0,
       "pos": "RB",
+      "rank": 45
+    },
+    {
+      "name": "D'Andre SwiftCHI",
+      "team": "",
+      "dynasty_value": 4397,
+      "tier": 0,
+      "pos": "RB",
       "rank": 46
     },
     {
       "name": "Dak PrescottDAL",
       "team": "",
-      "dynasty_value": 4394,
+      "dynasty_value": 4393,
       "tier": 0,
       "pos": "RB",
       "rank": 47
@@ -385,7 +385,7 @@
     {
       "name": "Michael WilsonARI",
       "team": "",
-      "dynasty_value": 4393,
+      "dynasty_value": 4391,
       "tier": 0,
       "pos": "RB",
       "rank": 48
@@ -393,23 +393,23 @@
     {
       "name": "Jake FergusonDAL",
       "team": "",
-      "dynasty_value": 4373,
+      "dynasty_value": 4371,
       "tier": 0,
       "pos": "RB",
       "rank": 49
     },
     {
-      "name": "Alec PierceIND",
+      "name": "Brock PurdySFO",
       "team": "",
-      "dynasty_value": 4333,
+      "dynasty_value": 4330,
       "tier": 0,
       "pos": "RB",
       "rank": 50
     },
     {
-      "name": "Brock PurdySFO",
+      "name": "Alec PierceIND",
       "team": "",
-      "dynasty_value": 4321,
+      "dynasty_value": 4326,
       "tier": 0,
       "pos": "RB",
       "rank": 51
@@ -417,7 +417,7 @@
     {
       "name": "Quentin JohnstonLAC",
       "team": "",
-      "dynasty_value": 4281,
+      "dynasty_value": 4278,
       "tier": 0,
       "pos": "RB",
       "rank": 52
@@ -425,7 +425,7 @@
     {
       "name": "Jaylen WarrenPIT",
       "team": "",
-      "dynasty_value": 4227,
+      "dynasty_value": 4232,
       "tier": 0,
       "pos": "RB",
       "rank": 53
@@ -433,23 +433,23 @@
     {
       "name": "C.J. StroudHOU",
       "team": "",
-      "dynasty_value": 4225,
+      "dynasty_value": 4223,
       "tier": 0,
       "pos": "RB",
       "rank": 54
     },
     {
-      "name": "Jakobi MeyersJAC",
+      "name": "Trey BensonARI",
       "team": "",
-      "dynasty_value": 4190,
+      "dynasty_value": 4186,
       "tier": 0,
       "pos": "RB",
       "rank": 55
     },
     {
-      "name": "Trey BensonARI",
+      "name": "Jakobi MeyersJAC",
       "team": "",
-      "dynasty_value": 4183,
+      "dynasty_value": 4181,
       "tier": 0,
       "pos": "RB",
       "rank": 56
@@ -457,7 +457,7 @@
     {
       "name": "Rico DowdleCAR",
       "team": "",
-      "dynasty_value": 4177,
+      "dynasty_value": 4173,
       "tier": 0,
       "pos": "RB",
       "rank": 57
@@ -465,7 +465,7 @@
     {
       "name": "Blake CorumLAR",
       "team": "",
-      "dynasty_value": 4154,
+      "dynasty_value": 4166,
       "tier": 0,
       "pos": "RB",
       "rank": 58
@@ -473,7 +473,7 @@
     {
       "name": "Bhayshul TutenRJAC",
       "team": "",
-      "dynasty_value": 4125,
+      "dynasty_value": 4136,
       "tier": 0,
       "pos": "RB",
       "rank": 59
@@ -481,7 +481,7 @@
     {
       "name": "Matthew GoldenRGBP",
       "team": "",
-      "dynasty_value": 4123,
+      "dynasty_value": 4120,
       "tier": 0,
       "pos": "RB",
       "rank": 60
@@ -489,7 +489,7 @@
     {
       "name": "Courtland SuttonDEN",
       "team": "",
-      "dynasty_value": 4090,
+      "dynasty_value": 4088,
       "tier": 0,
       "pos": "RB",
       "rank": 61
@@ -505,7 +505,7 @@
     {
       "name": "Troy FranklinDEN",
       "team": "",
-      "dynasty_value": 4024,
+      "dynasty_value": 4016,
       "tier": 0,
       "pos": "RB",
       "rank": 63
@@ -513,7 +513,7 @@
     {
       "name": "2027 Mid 2ndFA",
       "team": "",
-      "dynasty_value": 3976,
+      "dynasty_value": 3982,
       "tier": 0,
       "pos": "RB",
       "rank": 64
@@ -521,7 +521,7 @@
     {
       "name": "Trevor LawrenceJAC",
       "team": "",
-      "dynasty_value": 3976,
+      "dynasty_value": 3982,
       "tier": 0,
       "pos": "RB",
       "rank": 65
@@ -529,7 +529,7 @@
     {
       "name": "2026 Mid 2ndFA",
       "team": "",
-      "dynasty_value": 3964,
+      "dynasty_value": 3962,
       "tier": 0,
       "pos": "RB",
       "rank": 66
@@ -537,7 +537,7 @@
     {
       "name": "D.J. MooreCHI",
       "team": "",
-      "dynasty_value": 3940,
+      "dynasty_value": 3931,
       "tier": 0,
       "pos": "RB",
       "rank": 67
@@ -545,7 +545,7 @@
     {
       "name": "Jayden ReedGBP",
       "team": "",
-      "dynasty_value": 3901,
+      "dynasty_value": 3904,
       "tier": 0,
       "pos": "RB",
       "rank": 68
@@ -553,7 +553,7 @@
     {
       "name": "Terry McLaurinWAS",
       "team": "",
-      "dynasty_value": 3896,
+      "dynasty_value": 3900,
       "tier": 0,
       "pos": "RB",
       "rank": 69
@@ -561,15 +561,15 @@
     {
       "name": "Cam WardRTEN",
       "team": "",
-      "dynasty_value": 3857,
+      "dynasty_value": 3849,
       "tier": 0,
       "pos": "RB",
       "rank": 70
     },
     {
-      "name": "Brenton StrangeJAC",
+      "name": "Josh DownsIND",
       "team": "",
-      "dynasty_value": 3842,
+      "dynasty_value": 3845,
       "tier": 0,
       "pos": "RB",
       "rank": 71
@@ -577,13 +577,13 @@
     {
       "name": "2028 Early 2ndFA",
       "team": "",
-      "dynasty_value": 3839,
+      "dynasty_value": 3842,
       "tier": 0,
       "pos": "RB",
       "rank": 72
     },
     {
-      "name": "Josh DownsIND",
+      "name": "Brenton StrangeJAC",
       "team": "",
       "dynasty_value": 3839,
       "tier": 0,
@@ -601,7 +601,7 @@
     {
       "name": "Jared GoffDET",
       "team": "",
-      "dynasty_value": 3800,
+      "dynasty_value": 3797,
       "tier": 0,
       "pos": "RB",
       "rank": 75
@@ -617,23 +617,23 @@
     {
       "name": "Tyler AllgeierATL",
       "team": "",
-      "dynasty_value": 3766,
+      "dynasty_value": 3772,
       "tier": 0,
       "pos": "RB",
       "rank": 77
     },
     {
-      "name": "2026 Late 2ndFA",
+      "name": "Parker WashingtonJAC",
       "team": "",
-      "dynasty_value": 3715,
+      "dynasty_value": 3713,
       "tier": 0,
       "pos": "RB",
       "rank": 78
     },
     {
-      "name": "Parker WashingtonJAC",
+      "name": "2026 Late 2ndFA",
       "team": "",
-      "dynasty_value": 3714,
+      "dynasty_value": 3709,
       "tier": 0,
       "pos": "RB",
       "rank": 79
@@ -641,23 +641,23 @@
     {
       "name": "Kayshon BoutteNEP",
       "team": "",
-      "dynasty_value": 3698,
+      "dynasty_value": 3692,
       "tier": 0,
       "pos": "RB",
       "rank": 80
     },
     {
-      "name": "Elic AyomanorRTEN",
+      "name": "2027 Late 2ndFA",
       "team": "",
-      "dynasty_value": 3686,
+      "dynasty_value": 3683,
       "tier": 0,
       "pos": "RB",
       "rank": 81
     },
     {
-      "name": "2027 Late 2ndFA",
+      "name": "Elic AyomanorRTEN",
       "team": "",
-      "dynasty_value": 3683,
+      "dynasty_value": 3682,
       "tier": 0,
       "pos": "RB",
       "rank": 82
@@ -673,7 +673,7 @@
     {
       "name": "Jacory Croskey-MerrittRWAS",
       "team": "",
-      "dynasty_value": 3673,
+      "dynasty_value": 3670,
       "tier": 0,
       "pos": "RB",
       "rank": 84
@@ -689,7 +689,7 @@
     {
       "name": "Chuba HubbardCAR",
       "team": "",
-      "dynasty_value": 3641,
+      "dynasty_value": 3643,
       "tier": 0,
       "pos": "RB",
       "rank": 86
@@ -697,7 +697,7 @@
     {
       "name": "Chimere DikeRTEN",
       "team": "",
-      "dynasty_value": 3609,
+      "dynasty_value": 3610,
       "tier": 0,
       "pos": "RB",
       "rank": 87
@@ -705,21 +705,21 @@
     {
       "name": "2028 Mid 2ndFA",
       "team": "",
-      "dynasty_value": 3589,
+      "dynasty_value": 3592,
       "tier": 0,
       "pos": "RB",
       "rank": 88
     },
     {
-      "name": "David MontgomeryDET",
+      "name": "Romeo DoubsGBP",
       "team": "",
-      "dynasty_value": 3573,
+      "dynasty_value": 3575,
       "tier": 0,
       "pos": "RB",
       "rank": 89
     },
     {
-      "name": "Romeo DoubsGBP",
+      "name": "David MontgomeryDET",
       "team": "",
       "dynasty_value": 3572,
       "tier": 0,
@@ -729,15 +729,15 @@
     {
       "name": "Daniel JonesIND",
       "team": "",
-      "dynasty_value": 3567,
+      "dynasty_value": 3570,
       "tier": 0,
       "pos": "RB",
       "rank": 91
     },
     {
-      "name": "Tyjae SpearsTEN",
+      "name": "Pat BryantRDEN",
       "team": "",
-      "dynasty_value": 3513,
+      "dynasty_value": 3509,
       "tier": 0,
       "pos": "RB",
       "rank": 92
@@ -745,23 +745,23 @@
     {
       "name": "Isaac TeSlaaRDET",
       "team": "",
-      "dynasty_value": 3512,
+      "dynasty_value": 3506,
       "tier": 0,
       "pos": "RB",
       "rank": 93
     },
     {
-      "name": "Pat BryantRDEN",
+      "name": "Tyjae SpearsTEN",
       "team": "",
-      "dynasty_value": 3491,
+      "dynasty_value": 3505,
       "tier": 0,
       "pos": "RB",
       "rank": 94
     },
     {
-      "name": "Jaylin NoelRHOU",
+      "name": "Isaiah LikelyBAL",
       "team": "",
-      "dynasty_value": 3487,
+      "dynasty_value": 3486,
       "tier": 0,
       "pos": "RB",
       "rank": 95
@@ -769,15 +769,15 @@
     {
       "name": "J.J. McCarthyMIN",
       "team": "",
-      "dynasty_value": 3477,
+      "dynasty_value": 3480,
       "tier": 0,
       "pos": "RB",
       "rank": 96
     },
     {
-      "name": "Isaiah LikelyBAL",
+      "name": "Jaylin NoelRHOU",
       "team": "",
-      "dynasty_value": 3474,
+      "dynasty_value": 3479,
       "tier": 0,
       "pos": "RB",
       "rank": 97
@@ -785,23 +785,23 @@
     {
       "name": "Theo JohnsonNYG",
       "team": "",
-      "dynasty_value": 3472,
+      "dynasty_value": 3469,
       "tier": 0,
       "pos": "RB",
       "rank": 98
     },
     {
-      "name": "Mike EvansTBB",
+      "name": "Adonai MitchellNYJ",
       "team": "",
-      "dynasty_value": 3470,
+      "dynasty_value": 3455,
       "tier": 0,
       "pos": "RB",
       "rank": 99
     },
     {
-      "name": "Adonai MitchellNYJ",
+      "name": "Mike EvansTBB",
       "team": "",
-      "dynasty_value": 3463,
+      "dynasty_value": 3451,
       "tier": 0,
       "pos": "RB",
       "rank": 100
